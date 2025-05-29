@@ -43,6 +43,7 @@ A backend-only, Dockerized Django application for managing customer credit appro
 ```bash
 git clone https://github.com/<your-username>/credit-approval-system.git
 cd credit-approval-system
+```
 
 2. Add .env File
 Create a .env file in the root directory:
