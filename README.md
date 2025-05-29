@@ -55,8 +55,10 @@ POSTGRES_PASSWORD=postgres
 
 ```bash
 docker-compose up --build
+```
 
-📡 API Endpoints
+
+## API Endpoints
 1. POST /register
 Register a new customer.
 
