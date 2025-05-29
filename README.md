@@ -35,3 +35,39 @@ A backend-only, Dockerized Django application for managing customer credit appro
 | `manage.py`               | Django project entry point                           |
 | `docker-compose.yml`      | Docker Compose file to spin up all services          |
 | `README.md`               | Project documentation                                |
+
+## ⚙️ Setup Instructions
+
+# 1. Clone the Repository
+
+```bash
+git clone https://github.com/<your-username>/credit-approval-system.git
+cd credit-approval-system
+
+2. Add .env File
+Create a .env file in the root directory:
+
+POSTGRES_DB=credit_db
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+
+3. Start the App with Docker
+
+```bash
+docker-compose up --build
+
+📡 API Endpoints
+1. POST /register
+Register a new customer.
+
+2. POST /check-eligibility
+Calculate credit score and assess loan eligibility.
+
+3. POST /create-loan
+Create a loan if eligible. Automatically stores loan data.
+
+4. GET /view-loan/<loan_id>
+View loan and customer info for a specific loan.
+
+5. GET /view-loans/<customer_id>
+View all current loans and repayments_left for a customer.
