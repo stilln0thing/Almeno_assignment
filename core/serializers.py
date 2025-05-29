@@ -13,3 +13,9 @@ class CustomerRegisterSerializer(serializers.ModelSerializer):
         income = validated_data.pop('monthly_income')
         approved_limit = round(36 * income, -5)
         return Customer.objects.create(approved_limit=approved_limit, monthly_salary=income, **validated_data)
+
+class LoanEligibilitySerializer(serializers.Serializer):
+    customer_id = serializers.IntegerField()
+    loan_amount = serializers.FloatField()
+    interest_rate = serializers.FloatField()
+    tenure = serializers.IntegerField()
