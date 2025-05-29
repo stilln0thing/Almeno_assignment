@@ -38,7 +38,7 @@ A backend-only, Dockerized Django application for managing customer credit appro
 
 ## ⚙️ Setup Instructions
 
-# 1. Clone the Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/credit-approval-system.git
