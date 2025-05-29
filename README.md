@@ -25,4 +25,13 @@ A backend-only, Dockerized Django application for managing customer credit appro
 ---
 
 ## 🧱 Project Structure
-<pre> 📦 credit-approval-system/ ├── core/ # Models & serializers for Customer and Loan ├── credit_approval/ # Business logic and API views for loan processing ├── data/ # Excel files: customer_data.xlsx, loan_data.xlsx ├── docker/ # Docker-specific configs (e.g., Dockerfile, entrypoints) ├── manage.py # Django entry point ├── docker-compose.yml # Docker orchestration for app, DB, Redis, and Celery └── README.md # Project documentation </pre>
+
+| Path                      | Description                                           |
+|---------------------------|-------------------------------------------------------|
+| `core/`                   | Models and serializers for `Customer` and `Loan`     |
+| `credit_approval/`        | Business logic and API views for loan processing     |
+| `data/`                   | Contains `customer_data.xlsx` and `loan_data.xlsx`   |
+| `docker/`                 | Docker-specific configs (e.g., `Dockerfile`, etc.)   |
+| `manage.py`               | Django project entry point                           |
+| `docker-compose.yml`      | Docker Compose file to spin up all services          |
+| `README.md`               | Project documentation                                |
