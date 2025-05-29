@@ -218,3 +218,26 @@ class ViewLoanDetail(APIView):
             "monthly_installment": loan.monthly_installment,
             "tenure": loan.tenure
         }, status=status.HTTP_200_OK)
+
+class ViewCustomerLoans(APIView):
+    def get(self, request, customer_id):
+        from core.models import Customer, Loan
+        try:
+            customer = Customer.objects.get(customer_id=customer_id)
+        except Customer.DoesNotExist:
+            return Response({"error": "Customer not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        loans = Loan.objects.filter(customer=customer)
+
+        loan_list = []
+        for loan in loans:
+            repayments_left = loan.tenure - loan.emis_paid_on_time
+            loan_list.append({
+                "loan_id": loan.loan_id,
+                "loan_amount": loan.loan_amount,
+                "interest_rate": loan.interest_rate,
+                "monthly_installment": loan.monthly_installment,
+                "repayments_left": repayments_left
+            })
+
+        return Response(loan_list, status=status.HTTP_200_OK)
